@@ -1,25 +1,55 @@
 # Kazah
 
-Aprendo programación construyendo, probando y mejorando proyectos. Aquí comparto automatización, experimentos interactivos y lo que descubro por el camino.
+**Software engineering · JavaScript · Automation**
 
-## Trabajo actual
+Building Bitburner systems in public. We share the implementation, the reasoning behind it, and the results as the project evolves.
 
-**Bitburner · JavaScript y Netscript**
+## Bitburner engineering log
 
-Estoy desarrollando una red de scripts para automatizar el progreso dentro del juego. El punto de partida es un ciclo de `weaken`, `grow` y `hack` distribuido entre varios servidores.
+Our focus is turning a growing network into a reliable automation system. Development starts with a working baseline, then improves resource allocation, target selection and execution efficiency through measured changes.
 
-- Despliegue de scripts según la RAM disponible.
-- Comparación de objetivos e ingresos para decidir qué mejorar.
-- Progresión por facciones y mejoras del personaje.
-- Documentación de las decisiones, los resultados y los límites de cada versión.
+### Verified baseline · November 5, 2026
 
-## Cómo trabajo
+- Distributed the starter worker across seven servers with 37 execution threads.
+- Established a continuous `weaken → grow → hack` cycle against `n00dles`.
+- Acquired TOR and `BruteSSH.exe` to unlock SSH ports.
+- Gained root access to `CSEC`, installed its backdoor and joined CyberSec.
+- Started faction hacking contracts to build reputation alongside script income.
 
-Defino un objetivo, preparo una primera versión y compruebo su comportamiento antes de ampliarla. Utilizo asistencia de IA para desarrollar y revisar código, y comparto lo que he podido verificar.
+These are recorded milestones. The live save continues to evolve.
 
-## Otros experimentos
+### Current worker
 
-- [Seed Synth](https://github.com/Mimo-the-gardener/seed-synth) — un secuenciador musical de ocho pasos.
-- [Pocket Herbarium](https://github.com/Mimo-the-gardener/pocket-herbarium) — un generador de ilustraciones botánicas en SVG a partir de palabras.
+The initial worker uses security and money thresholds to decide its next operation. Its target is fixed to `n00dles`, and each deployment runs independently.
 
-**Ahora explorando** JavaScript · Netscript · automatización · Git y GitHub
+```javascript
+/** @param {NS} ns */
+export async function main(ns) {
+  const target = "n00dles";
+  const minSecurity = ns.getServerMinSecurityLevel(target);
+  const maxMoney = ns.getServerMaxMoney(target);
+
+  while (true) {
+    if (ns.getServerSecurityLevel(target) > minSecurity + 3) {
+      await ns.weaken(target);
+    } else if (ns.getServerMoneyAvailable(target) < maxMoney * 0.75) {
+      await ns.grow(target);
+    } else {
+      await ns.hack(target);
+    }
+  }
+}
+```
+
+### Next engineering work
+
+- Automate discovery and deployment using available RAM.
+- Compare target profitability using income, execution time and security.
+- Coordinate workers to reduce redundant operations.
+- Record reproducible performance measurements before and after each change.
+
+### What we share
+
+Working scripts, architecture decisions, deployment steps, progress milestones and experiment results. Each update will distinguish completed work from planned changes and explain the trade-offs behind the implementation.
+
+**Follow the repository history for the evolution of this project.**
