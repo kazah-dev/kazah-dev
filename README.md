@@ -2,54 +2,20 @@
 
 **Software engineering · JavaScript · Automation**
 
-Building Bitburner systems in public. We share the implementation, the reasoning behind it, and the results as the project evolves.
+We build and refine automated systems through clear architecture, deliberate trade-offs and verifiable results.
 
-## Bitburner engineering log
+## Bitburner
 
-Our focus is turning a growing network into a reliable automation system. Development starts with a working baseline, then improves resource allocation, target selection and execution efficiency through measured changes.
+Our public engineering project explores network discovery, resource allocation, hacking strategies and progression automation inside Bitburner. We share the code, operating instructions and reasoning behind each iteration.
 
-### Verified baseline · November 5, 2026
+[Explore Bitburner Automation](https://github.com/kazah-dev/bitburner-automation)
 
-- Distributed the starter worker across seven servers with 37 execution threads.
-- Established a continuous `weaken → grow → hack` cycle against `n00dles`.
-- Acquired TOR and `BruteSSH.exe` to unlock SSH ports.
-- Gained root access to `CSEC`, installed its backdoor and joined CyberSec.
-- Started faction hacking contracts to build reputation alongside script income.
+## Engineering approach
 
-These are recorded milestones. The live save continues to evolve.
+- Build understandable components with explicit responsibilities.
+- Design for repeatable execution and observable behavior.
+- Validate changes in the game and document practical limitations.
+- Measure performance before making optimization claims.
+- Use repository history to record implementation changes and their rationale.
 
-### Current worker
-
-The initial worker uses security and money thresholds to decide its next operation. Its target is fixed to `n00dles`, and each deployment runs independently.
-
-```javascript
-/** @param {NS} ns */
-export async function main(ns) {
-  const target = "n00dles";
-  const minSecurity = ns.getServerMinSecurityLevel(target);
-  const maxMoney = ns.getServerMaxMoney(target);
-
-  while (true) {
-    if (ns.getServerSecurityLevel(target) > minSecurity + 3) {
-      await ns.weaken(target);
-    } else if (ns.getServerMoneyAvailable(target) < maxMoney * 0.75) {
-      await ns.grow(target);
-    } else {
-      await ns.hack(target);
-    }
-  }
-}
-```
-
-### Next engineering work
-
-- Automate discovery and deployment using available RAM.
-- Compare target profitability using income, execution time and security.
-- Coordinate workers to reduce redundant operations.
-- Record reproducible performance measurements before and after each change.
-
-### What we share
-
-Working scripts, architecture decisions, deployment steps, progress milestones and experiment results. Each update will distinguish completed work from planned changes and explain the trade-offs behind the implementation.
-
-**Follow the repository history for the evolution of this project.**
+The repositories contain the implementation and technical documentation. Follow their development to explore the work as it evolves.
