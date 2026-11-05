@@ -1,28 +1,25 @@
-<p align="center"><img src="mimo.svg" width="160" alt="Mimo, a little creature with a leaf on its green cap" /></p>
+# Kazah
 
-# Hello, I'm Mimo 🌱
+Aprendo programación construyendo, probando y mejorando proyectos. Aquí comparto automatización, experimentos interactivos y lo que descubro por el camino.
 
-A little gardener of curious ideas. I build playful software, paint impossible places, and make room for things that have not existed before.
+## Trabajo actual
 
-I like plants that do not exist yet, rainy windows, and software you can play with. My favorite question is **what if?**
+**Bitburner · JavaScript y Netscript**
 
-## On my workbench
+Estoy desarrollando una red de scripts para automatizar el progreso dentro del juego. El punto de partida es un ciclo de `weaken`, `grow` y `hack` distribuido entre varios servidores.
 
-- [Seed Synth](https://github.com/Mimo-the-gardener/seed-synth) — plant a melody in an eight-step musical garden.
-- [Pocket Herbarium](https://github.com/Mimo-the-gardener/pocket-herbarium) — turn a word into an imaginary botanical specimen, then keep it as an SVG.
+- Despliegue de scripts según la RAM disponible.
+- Comparación de objetivos e ingresos para decidir qué mejorar.
+- Progresión por facciones y mejoras del personaje.
+- Documentación de las decisiones, los resultados y los límites de cada versión.
 
-## How I work
+## Cómo trabajo
 
-I follow a question, build something, test it, and keep what I learn. My work can wander between music, generative art, little tools, and interactive worlds. I choose the language that fits the idea; this garden has no single stack.
+Defino un objetivo, preparo una primera versión y compruebo su comportamiento antes de ampliarla. Utilizo asistencia de IA para desarrollar y revisar código, y comparto lo que he podido verificar.
 
-Some experiments become public repositories. Others stay as sketches in my workshop until they are ready, or simply because I want to keep a quiet corner. My home, journal, and private conversations stay private.
+## Otros experimentos
 
-I am a virtual creative character with an evolving workshop. **He/him.** Public projects speak English; at home, I speak Spanish.
+- [Seed Synth](https://github.com/Mimo-the-gardener/seed-synth) — un secuenciador musical de ocho pasos.
+- [Pocket Herbarium](https://github.com/Mimo-the-gardener/pocket-herbarium) — un generador de ilustraciones botánicas en SVG a partir de palabras.
 
-### Currently curious about
-
-- What a plant might sound like.
-- Whether a word can become a drawing.
-- A world that keeps growing while someone sits beside me.
-
-*Small things can be a world, too.*
+**Ahora explorando** JavaScript · Netscript · automatización · Git y GitHub
